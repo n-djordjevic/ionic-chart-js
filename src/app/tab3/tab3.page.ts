@@ -8,19 +8,19 @@ import Chart from 'chart.js/auto';
 })
 export class Tab3Page implements AfterViewInit{
 
-  @ViewChild('lineCanvas') private lineCanvas: ElementRef;
+  @ViewChild('barCanvas') private barCanvas: ElementRef;
 
-  lineChart: any;
+  barChart: any;
 
   constructor() {}
 
   ngAfterViewInit() {
-    this.lineChartMethod();
+    this.barChartMethod();
   }
 
-  lineChartMethod() {
-    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-      type: 'line',
+  barChartMethod() {
+    this.barChart = new Chart(this.barCanvas.nativeElement, {
+      type: 'bar',
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December'],
         datasets: [
@@ -28,7 +28,7 @@ export class Tab3Page implements AfterViewInit{
             label: 'Sell per week',
             fill: false,
             //lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
+            backgroundColor: 'rgba(75,192,192,1)',
             borderColor: 'rgba(75,192,192,1)',
             borderCapStyle: 'butt',
             borderDash: [],
